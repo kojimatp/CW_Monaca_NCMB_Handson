@@ -1,4 +1,5 @@
 var Favorite = (function() {
+    // 初期設定
     var Favorite = function(options) {
         // オプションの値を表示してみます。
         console.log(options);
@@ -36,18 +37,17 @@ var Favorite = (function() {
         });
     };
     
-    // 一つの気に対してお気に入り状態を反映させる
+    // 一つの記事に対してお気に入り状態を反映させる
     Favorite.prototype.apply = function(item) {
         
     };
     
+    // イベント処理を設定
     Favorite.prototype.addClickHandler = function() {
         var self = this;
         
         // 記事一覧の中のstarクラスに対してイベントを指定します。
-        // スマートフォンの場合はtapstart、デスクトップの場合はclickイベントとします
-        var event = typeof cordova == 'undefined' ? 'click' : 'tapstart';
-        $(this.listEl).on(event, '.star', function(event) {
+        $(this.listEl).on('click', '.star', function(event) {
             // タップ設定が有効であれば処理を行います
             // これは二重処理の防止です
             if (self.clickEnabled == true) {

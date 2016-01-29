@@ -6,7 +6,10 @@ var Feed = (function() {
     var Feed = function(options) {
         // URL for RSS
         this.url = '';
-            
+        
+        // お気に入りオブジェクトの初期化
+        this.favorite = null;
+        
         //Mask element
         this.maskEl = "#mask";
         
